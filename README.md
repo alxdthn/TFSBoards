@@ -14,5 +14,7 @@
 - MVC
 - MVVM - используется в проекте
 
-<img src="https://github.com/alxdthn/TFSBoards/blob/master/readmeSrc/TFSBoards1.jpg" width="400">
-<img src="https://github.com/alxdthn/TFSBoards/blob/master/readmeSrc/TFSBoards.gif" width="400">
+<p>
+    <img src="https://github.com/alxdthn/TFSBoards/blob/master/readmeSrc/TFSBoards1.jpg" width="400">
+    <img src="https://github.com/alxdthn/TFSBoards/blob/master/readmeSrc/TFSBoards.gif" width="400">
+</p>
