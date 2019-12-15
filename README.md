@@ -1,6 +1,6 @@
 # TFS Boards
 
-Робота выполнена в рамках курса FintechTinkoff. Android/Kotlin.
+Робота выполнена в рамках курса FintechTinkoff Android/Kotlin.
 
 Первый, относительно крупный, учебный проект. Время выполнения 2 месяца. Задача проекта заключалась в том, что бы повторить определенный функционал оригинального приложения Trello.
 
@@ -13,3 +13,5 @@
 
 - MVC
 - MVVM - используется в проекте
+
+<img src="https://github.com/alxdthn/TFSBoards/blob/master/readmeSrc/TFSBoards1.jpg" width="400">
