@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/srlRefreshBoardsList"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<!--Content-->
+	<FrameLayout
+		android:id="@+id/flBoardsListContainer"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/rvBoards"
+			style="@style/RecyclerViewBoards"
+			android:background="@color/white"
+			tools:listitem="@layout/layout_teams_list_item" />
+
+		<!--Stub-->
+		<include layout="@layout/layout_teams_stub" />
+
+		<com.google.android.material.floatingactionbutton.FloatingActionButton
+			android:id="@+id/btnAddNewBoard"
+			style="@style/ButtonAddNewBoards" />
+
+	</FrameLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

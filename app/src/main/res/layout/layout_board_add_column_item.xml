@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/addNewColumnItem"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="@drawable/column_button_background"
+	app:cardCornerRadius="@dimen/corner_rad"
+	app:cardElevation="@dimen/elevation_lvl_2">
+
+	<Button
+		android:id="@+id/btnAddColumn"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical"
+		android:fontFamily="sans-serif-smallcaps"
+		android:padding="12dp"
+		android:textAllCaps="false"
+		android:background="@null"
+		android:text="@string/add_column_button_title"
+		android:textColor="@color/colorAccent"
+		android:textSize="15sp" />
+
+	<EditText
+		android:id="@+id/edxAddColumnInput"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="@string/add_column_input_hint"
+		android:imeOptions="flagNoExtractUi|actionDone"
+		android:inputType="textCapSentences"
+		android:maxLength="100"
+		android:textSize="@dimen/std_text_size"
+		android:paddingLeft="16dp"
+		android:paddingRight="16dp"
+		android:layout_margin="8dp"
+		android:visibility="gone"/>
+</FrameLayout>
+
+
+

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/clToolbar"
+	android:layout_width="match_parent"
+	android:layout_height="?attr/actionBarSize"
+	android:elevation="@dimen/elevation_lvl_2"
+	tools:background="@color/colorPrimary">
+
+	<ImageButton
+		android:id="@+id/btnToolbarCancelInput"
+		style="@style/HeaderButton"
+		android:src="@drawable/ic_close_white"
+		android:visibility="gone"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageButton
+		android:id="@+id/btnToolbarBack"
+		style="@style/HeaderButton"
+		android:src="@drawable/ic_arrow_white"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<TextView
+		android:id="@+id/txvToolbarTitle"
+		style="@style/ToolbarTitle"
+		android:paddingEnd="110dp"
+		app:layout_constraintStart_toEndOf="@id/btnToolbarBack"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:text="Header" />
+
+	<ImageButton
+		android:id="@+id/btnToolbarAcceptInput"
+		style="@style/HeaderButton"
+		android:src="@drawable/accept_button"
+		android:visibility="gone"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<ImageButton
+		android:id="@+id/btnToolbarDetails"
+		style="@style/HeaderButton"
+		android:src="@drawable/ic_more_vert_white"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

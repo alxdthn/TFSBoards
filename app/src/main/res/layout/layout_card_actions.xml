@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:animateLayoutChanges="true"
+	android:orientation="vertical">
+
+	<androidx.cardview.widget.CardView
+		android:id="@+id/llCardFragmentActionsLine"
+		style="@style/Clickable"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:elevation="@dimen/elevation_lvl_1">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:padding="9dp">
+
+			<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="7dp"
+				android:paddingEnd="13dp"
+				android:src="@drawable/ic_assignment_black" />
+
+			<TextView
+				android:id="@+id/txvCardFragmentActionsTitle"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:fontFamily="sans-serif-light"
+				android:gravity="center_vertical"
+				android:text="@string/activity"
+				android:textSize="16sp" />
+		</LinearLayout>
+	</androidx.cardview.widget.CardView>
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/rvCardFragmentActions"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:clipToPadding="false"
+		android:paddingBottom="72dp"
+		android:visibility="gone"
+		android:overScrollMode="never"
+		app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+		tools:itemCount="2"
+		tools:listitem="@layout/layout_card_actions_list_item"
+		tools:visibility="visible" />
+
+	<ProgressBar
+		android:id="@+id/pbCardFragmentActionsProgress"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingTop="@dimen/std_padding"
+		android:visibility="gone" />
+</LinearLayout>
+

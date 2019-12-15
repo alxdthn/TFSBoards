@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:animateLayoutChanges="true"
+	android:orientation="vertical">
+
+	<androidx.cardview.widget.CardView
+		android:id="@+id/llCardFragmentAttachmentsTitle"
+		style="@style/Clickable"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:cardElevation="@dimen/elevation_lvl_1">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:padding="9dp">
+
+			<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="7dp"
+				android:paddingEnd="13dp"
+				android:src="@drawable/ic_attachment_black" />
+
+			<TextView
+				android:id="@+id/txvCardFragmentAttachmentsTitle"
+				style="@style/CardPartTitle"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:text="@string/attachments" />
+		</LinearLayout>
+	</androidx.cardview.widget.CardView>
+
+	<FrameLayout
+		android:id="@+id/flCardFragmentAttachmentsContainer"
+		android:visibility="gone"
+		tools:visibility="visible"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<TextView
+			android:id="@+id/txvCardFragmentAttachmentsStub"
+			style="@style/CardPartTitle"
+			android:layout_width="match_parent"
+			android:layout_height="80dp"
+			android:gravity="center"
+			android:textSize="18sp"
+			android:text="Вложений нет" />
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/rvCardFragmentAttachments"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="4dp"
+			android:overScrollMode="never"
+			tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+			tools:listitem="@layout/layout_card_attachment_list_image_item"
+			tools:spanCount="3" />
+	</FrameLayout>
+</LinearLayout>

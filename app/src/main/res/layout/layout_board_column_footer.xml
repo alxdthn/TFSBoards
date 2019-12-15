@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/btnAddCard"
+	android:layout_width="match_parent"
+	android:layout_height="@dimen/column_footer_height"
+	android:layout_gravity="center_vertical"
+	android:background="@drawable/column_footer_background"
+	android:fontFamily="sans-serif-smallcaps"
+	android:padding="12dp"
+	android:textAllCaps="false"
+	android:textSize="15sp"
+	android:textColor="@color/colorAccent"
+	android:text="@string/add_card_button_title" />

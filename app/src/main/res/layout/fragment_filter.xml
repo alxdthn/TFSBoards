@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/llFilterFragmentBackground"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/white"
+	android:orientation="vertical">
+
+	<androidx.cardview.widget.CardView
+		android:id="@+id/cvFilterFragmentToolbar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:cardCornerRadius="0dp">
+
+		<include layout="@layout/layout_toolbar" />
+	</androidx.cardview.widget.CardView>
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/rvFilterFragmentCards"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:clipToPadding="false"
+			android:paddingTop="8dp"
+			android:visibility="invisible"
+			app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+			tools:listitem="@layout/layout_board_card_item" />
+
+		<EditText
+			android:id="@+id/edxFilterInput"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom"
+			android:background="@color/alpha40"
+			android:fontFamily="sans-serif-medium"
+			android:imeOptions="flagNoExtractUi"
+			android:padding="@dimen/std_padding"
+			android:textColor="@color/white"
+			android:textSize="20sp"
+			android:visibility="gone"
+			tools:text="Имя карточки"
+			tools:translationY="0dp" />
+	</FrameLayout>
+</LinearLayout>

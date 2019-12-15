@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item
+		android:id="@+id/menuAttachmentShow"
+		android:title="@string/show"/>
+	<item
+		android:id="@+id/menuAttachmentDownload"
+		android:title="@string/download"/>
+	<item
+		android:id="@+id/menuAttachmentDelete"
+		android:title="@string/delete"/>
+</menu>

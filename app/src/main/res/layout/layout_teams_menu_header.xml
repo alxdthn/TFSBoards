@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/llNavigationHeader"
+	android:layout_width="match_parent"
+	android:orientation="vertical"
+	android:gravity="bottom"
+	android:padding="@dimen/std_padding"
+	android:layout_height="@dimen/nav_header_height"
+	android:background="@drawable/menu_header_background"
+	android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+	<com.alxdthn.tfsboards.custom_view.CustomUserAvatar
+		android:id="@+id/avUserAvatar"
+		android:layout_width="60dp"
+		android:layout_height="60dp"
+		app:border="2dp"
+		app:border_color="@color/white"
+		app:color="@color/orange" />
+
+	<TextView
+		android:id="@+id/txvFullName"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/std_padding"
+		android:text="Loading"
+		android:textColor="@color/white"
+		android:textSize="18sp"
+		tools:text="Username" />
+
+	<TextView
+		android:id="@+id/txvUserName"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="8dp"
+		android:text="\@loading"
+		android:textColor="@color/white"
+		android:textSize="15sp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/txvFullName"
+		tools:text="\@username" />
+</LinearLayout>

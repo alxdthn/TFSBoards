@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:card_view="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/cvBoardColumnDragItem"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	card_view:cardBackgroundColor="@color/cardBackground"
+	card_view:cardElevation="2dp"
+	card_view:cardCornerRadius="0dp"
+	android:layout_marginTop="4dp"
+	android:layout_marginBottom="4dp"
+	android:layout_marginLeft="8dp"
+	android:layout_marginRight="8dp"
+	android:foreground="?selectableItemBackground">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="8dp"
+		android:orientation="vertical">
+
+		<TextView
+			android:id="@+id/txvCardName"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:fontFamily="sans-serif"
+			android:textColor="#272727"
+			android:textSize="14sp"
+			android:paddingBottom="8dp"
+			tools:text="Card name" />
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<ImageView
+				android:id="@+id/ivCardItemDescription"
+				android:src="@drawable/ic_subject_black"
+				android:layout_marginRight="@dimen/std_padding"
+				style="@style/CardItemIcon" />
+
+			<ImageView
+				android:id="@+id/ivCardItemAttachments"
+				android:src="@drawable/ic_attachment_black"
+				style="@style/CardItemIcon" />
+
+			<TextView
+				android:id="@+id/txvCardItemAttachmentsCount"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="@dimen/std_padding"
+				tools:text="42"/>
+
+			<ImageView
+				android:id="@+id/ivCardItemMembers"
+				android:src="@drawable/ic_person_outline_black"
+				style="@style/CardItemIcon" />
+
+			<TextView
+				android:id="@+id/txvCardItemMembersCount"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				tools:text="42"/>
+		</LinearLayout>
+	</LinearLayout>
+</androidx.cardview.widget.CardView>

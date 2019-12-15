@@ -1,0 +1,21 @@
+package com.alxdthn.tfsboards.model
+
+enum class Events {
+	RESTART,
+	NOTHING,
+	AUTH,
+	TEAMS,
+	BOARD,
+	BOARD_CLOSE,
+	CARD,
+	CARD_CLOSE,
+	CARD_DELETE,
+	ERROR,
+	MEMBERS,
+	MEMBERS_CLOSE,
+	FILTER,
+	FILTER_CLOSE,
+	FILTER_SHOW_CARD,
+	LOGOUT,
+	CLOSE
+}

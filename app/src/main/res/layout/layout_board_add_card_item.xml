@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/cvBoardColumnDragItem"
+	android:layout_width="match_parent"
+	android:layout_height="@dimen/column_footer_height"
+	app:cardBackgroundColor="@color/cardBackground"
+	app:cardElevation="2dp"
+	app:cardCornerRadius="0dp"
+	android:layout_marginTop="4dp"
+	android:layout_marginBottom="8dp"
+	android:layout_marginLeft="8dp"
+	android:layout_marginRight="8dp"
+	android:foreground="?selectableItemBackground">
+
+	<EditText
+		style="@style/EditableText"
+		android:visibility="visible"
+		android:id="@+id/edxAddCardInput"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:hint="@string/add_card_input_hint"
+		android:textSize="@dimen/std_text_size"
+		android:paddingLeft="@dimen/std_padding"
+		android:paddingRight="@dimen/std_padding"
+		android:layout_margin="8dp" />
+</androidx.cardview.widget.CardView>

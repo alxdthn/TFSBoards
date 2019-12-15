@@ -1,0 +1,61 @@
+<resources>
+	<string name="app_name">TFS Boards</string>
+	<string name="main_app_title">TFS\nBoards</string>
+	<string name="teams_toolbar_title">Доски</string>
+	<string name="board_members_toolbar_title">@string/members_button_title</string>
+	<string name="no_internet_title">No\nInternet\n:(</string>
+	<string name="filter_toolbar_title">Поиск карточки</string>
+
+	<string name="add_board_dialog_toolbar_title">Создать доску</string>
+	<string name="add_board_dialog_input_hint">Название доски</string>
+	<string name="add_card_input_hint">Название карточки</string>
+	<string name="add_column_button_title">Добавить список</string>
+	<string name="add_board_dialog_accept_button_title">Создать</string>
+	<string name="add_column_input_hint">Название списка</string>
+	<string name="add_card_button_title">Добавить карточку</string>
+	<string name="dialog_dismiss_button_title">Отмена</string>
+	<string name="delete">Удалить</string>
+	<string name="remove_dialog_message">Удалить %1$s:\n%2$s?</string>
+	<string name="accept">Применить</string>
+	<string name="remove_card_dialog_message">Вы действительно хотите удалить карточку?</string>
+	<string name="column_question">Колноку</string>
+
+	<string name="card_position">%1$s, %2$s</string>
+	<string name="card_description">Изменить описание&#8230;</string>
+	<string name="user_name">\@%1$s</string>
+	<string name="try_again_button_title">TRY\nAGAIN</string>
+	<string name="login_button_title">LOGIN</string>
+
+	<!-- MENUS -->
+	<string name="exit_button_title">Выйти из приложения</string>
+	<string name="members_button_title">Участники доски</string>
+	<string name="actions_button_title">Действия</string>
+
+	<string name="add_card_toolbar_title">Добавить карточку</string>
+	<string name="add_column_toolbar_title">Добавить список</string>
+	<string name="edit_column_name_toolbar_title">Изменить название</string>
+	<string name="edit_card_description_toolbar_title">Изменение описания</string>
+	<string name="edit_card_name_toolbar_title">Изменение названия</string>
+	<string name="enter_name">Введите имя</string>
+	<string name="members">Участники</string>
+	<string name="attachments">Вложения</string>
+	<string name="activity">Действия</string>
+
+	<string name="if_cant_open_file_message">На устройстве не найдено приложения, что бы открыть этот файл</string>
+
+	<string name="action_create_card">&lt;b>%1$s&lt;/b> добавил(а) карточку в список &lt;b>%2$s&lt;/b></string>
+	<string name="action_renamed_card">&lt;b>%1$s&lt;/b> изменил(а) название карточки с &lt;b>%2$s&lt;/b> на &lt;b>%3$s&lt;/b></string>
+	<string name="action_changed_description_of_card">&lt;b>%1$s&lt;/b> изменил(а) описание карточки на &lt;b>%2$s&lt;/b></string>
+	<string name="action_added_member_to_card">&lt;b>%1$s&lt;/b> добавил(а) участника &lt;b>%2$s&lt;/b> к карточке</string>
+	<string name="action_removed_member_from_card">&lt;b>%1$s&lt;/b> удалил(а) участника &lt;b>%2$s&lt;/b> из карточки</string>
+	<string name="action_member_joined_card">&lt;b>%1$s&lt;/b> присоеденился(-лась) к карточке</string>
+	<string name="action_member_left_card">&lt;b>%1$s&lt;/b> покинул(а) карточку</string>
+	<string name="action_add_attachment_to_card">&lt;b>%1$s&lt;/b> прикрепил(а) вложение &lt;b>%2$s&lt;/b> к карточке</string>
+	<string name="action_delete_attachment_from_card">&lt;b>%1$s&lt;/b> удалил(а) вложение &lt;b>%2$s&lt;/b> из карточки</string>
+	<string name="action_comment_on_card">&lt;b>%1$s&lt;/b> оставил(а) комментарий \"&lt;b>%2$s&lt;/b>\"</string>
+	<string name="action_move_card_from_list_to_list">&lt;b>%1$s&lt;/b> переместил(а) карточку из списка &lt;b>%2$s&lt;/b> в список &lt;b>%3$s&lt;/b></string>
+	<string name="action_sent_card_to_board">&lt;b>%1$s&lt;/b> отправил(а) эту карточку на доску</string>
+	<string name="action_archived_card">&lt;b>%1$s&lt;/b> архивировал(а) карточку</string>
+	<string name="download">Скачать</string>
+	<string name="show">Показать</string>
+</resources>

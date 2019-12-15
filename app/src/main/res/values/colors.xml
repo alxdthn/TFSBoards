@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="colorPrimary">#0078BF</color>
+	<color name="colorPrimaryDark">#006AA7</color>
+	<color name="colorAccent">#FF7300</color>
+	<color name="alpha25">#41000000</color>
+	<color name="alpha40">#66000000</color>
+	<color name="lightGray">#8D8D8D</color>
+	<color name="white">#FFFFFF</color>
+	<color name="menuIconDark">#8D8D8D</color>
+	<color name="menuTitleDark">#676767</color>
+
+	<color name="blue">#0079BF</color>
+	<color name="green">#83B473</color>
+	<color name="grey">#A5ACB0</color>
+	<color name="lime">#7ECF96</color>
+	<color name="orange">#D29034</color>
+	<color name="pink">#CD5A91</color>
+	<color name="purple">#AA8DB9</color>
+	<color name="red">#B04632</color>
+	<color name="sky">#00AECC</color>
+
+	<color name="blue_medium">#00407F</color>
+	<color name="green_medium">#004600</color>
+	<color name="grey_medium">#353D40</color>
+	<color name="lime_medium">#004A00</color>
+	<color name="orange_medium">#5F2E00</color>
+	<color name="pink_medium">#780048</color>
+	<color name="purple_medium">#502B63</color>
+	<color name="red_medium">#771400</color>
+	<color name="sky_medium">#004660</color>
+
+	<color name="blue_dark">#002E5F</color>
+	<color name="green_dark">#003500</color>
+	<color name="grey_dark">#272E2E</color>
+	<color name="lime_dark">#003800</color>
+	<color name="orange_dark">#462200</color>
+	<color name="pink_dark">#5A0035</color>
+	<color name="purple_dark">#3D224A</color>
+	<color name="red_dark">#590000</color>
+	<color name="sky_dark">#003548</color>
+
+	<color name="yellow">#FFEB3B</color>
+	<color name="columnBackground">#DDDDDD</color>
+	<color name="columnHeader">#F3F3F3</color>
+	<color name="columnFooter">#F3F3F3</color>
+	<color name="cardBackground">#FBFBFB</color>
+	<color name="customShadowColor">#827E7E7E</color>
+
+	<color name="top">#fce289</color>
+	<color name="bottom">#1c1f2c</color>
+</resources>

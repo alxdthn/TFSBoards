@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.alxdthn.tfsboards.custom_view.CardMembersContainer xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/llCardFragmentMembersPart"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	android:padding="9dp">
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:padding="7dp"
+		android:paddingEnd="13dp"
+		android:src="@drawable/ic_group_black" />
+
+	<TextView
+		android:id="@+id/txvCardFragmentMembersTitle"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:fontFamily="sans-serif-light"
+		android:gravity="center_vertical"
+		android:text="@string/members"
+		android:textSize="16sp"
+		android:visibility="gone" />
+
+	<com.alxdthn.tfsboards.custom_view.CustomRecyclerView
+		android:id="@+id/rvCardFragmentMembers"
+		android:layout_width="match_parent"
+		android:overScrollMode="never"
+		android:layout_height="wrap_content"
+		android:columnWidth="56dp"
+		tools:listitem="@layout/layout_card_members_list_item" />
+</com.alxdthn.tfsboards.custom_view.CardMembersContainer>

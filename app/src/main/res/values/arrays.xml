@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_keys">
+        <item>blue</item>
+        <item>green</item>
+        <item>grey</item>
+        <item>lime</item>
+        <item>orange</item>
+        <item>pink</item>
+        <item>purple</item>
+        <item>red</item>
+        <item>sky</item>
+    </string-array>
+    <array name="colors_normal">
+        <item>@color/blue</item>
+        <item>@color/green</item>
+        <item>@color/grey</item>
+        <item>@color/lime</item>
+        <item>@color/orange</item>
+        <item>@color/pink</item>
+        <item>@color/purple</item>
+        <item>@color/red</item>
+        <item>@color/sky</item>
+    </array>
+    <array name="colors_medium">
+        <item>@color/blue_medium</item>
+        <item>@color/green_medium</item>
+        <item>@color/grey_medium</item>
+        <item>@color/lime_medium</item>
+        <item>@color/orange_medium</item>
+        <item>@color/pink_medium</item>
+        <item>@color/purple_medium</item>
+        <item>@color/red_medium</item>
+        <item>@color/sky_medium</item>
+    </array>
+    <array name="colors_dark">
+        <item>@color/blue_dark</item>
+        <item>@color/green_dark</item>
+        <item>@color/grey_dark</item>
+        <item>@color/lime_dark</item>
+        <item>@color/orange_dark</item>
+        <item>@color/pink_dark</item>
+        <item>@color/purple_dark</item>
+        <item>@color/red_dark</item>
+        <item>@color/sky_dark</item>
+    </array>
+</resources>

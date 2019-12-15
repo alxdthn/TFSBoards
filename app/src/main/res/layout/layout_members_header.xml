@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	style="@style/Toolbar"
+	app:cardBackgroundColor="@color/white">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<ImageButton
+			android:id="@+id/btnMembersFragmentClose"
+			style="@style/HeaderButton"
+			android:src="@drawable/ic_close_grey"
+			android:tint="@color/colorAccent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			style="@style/ToolbarTitle"
+			android:textColor="@color/lightGray"
+			android:text="@string/board_members_toolbar_title"
+			app:layout_constraintStart_toEndOf="@+id/btnMembersFragmentClose"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<ImageButton
+			android:id="@+id/btnMembersFragmentAccept"
+			style="@style/HeaderButton"
+			android:src="@drawable/ic_done_grey"
+			android:tint="@color/colorAccent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

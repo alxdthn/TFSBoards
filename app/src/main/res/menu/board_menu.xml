@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:showIn="navigation_view">
+
+	<group android:checkableBehavior="single">
+		<item
+			android:id="@+id/navBoardMembers"
+			android:icon="@drawable/ic_group_black"
+			android:title="@string/members_button_title" />
+		<item
+			android:id="@+id/navBoardActions"
+			android:icon="@drawable/ic_assignment_black"
+			android:title="@string/actions_button_title" />
+	</group>
+</menu>

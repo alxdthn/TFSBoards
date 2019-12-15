@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/llBoardContainer"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<!--Header-->
+	<include layout="@layout/layout_board_toolbar" />
+
+	<!--Body-->
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<ScrollView
+			android:id="@+id/svBackgroundHolder"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<ImageView
+				android:id="@+id/ivBoardBackground"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="top" />
+		</ScrollView>
+
+		<ProgressBar
+			android:id="@+id/pbBoardProgressBar"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:visibility="gone" />
+
+		<com.alxdthn.tfsboards.custom_view.CustomBoardView
+			android:id="@+id/bvBoardView"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:clipChildren="false"
+			android:clipToPadding="false"
+			android:overScrollMode="never"
+			android:paddingTop="@dimen/std_padding"
+			android:paddingBottom="@dimen/normal_padding"
+			android:visibility="gone" />
+	</RelativeLayout>
+</LinearLayout>

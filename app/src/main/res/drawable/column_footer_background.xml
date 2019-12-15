@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	<!-- "shadow" -->
+	<item>
+		<shape android:shape="rectangle" >
+			<solid android:color="@color/customShadowColor"/>
+			<corners
+				android:bottomLeftRadius="@dimen/corner_rad"
+				android:bottomRightRadius="@dimen/corner_rad"/>
+		</shape>
+	</item>
+
+	<item android:bottom="@dimen/customShadowSize">
+		<shape android:shape="rectangle">
+			<solid android:color="@color/columnFooter"/>
+			<corners
+				android:bottomLeftRadius="@dimen/corner_rad"
+				android:bottomRightRadius="@dimen/corner_rad"/>
+		</shape>
+	</item>
+
+</layer-list>

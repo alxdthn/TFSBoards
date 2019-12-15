@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:padding="16dp"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+
+	<TextView
+		android:id="@+id/txvAddBoardDialogHeader"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingLeft="16dp"
+		android:paddingRight="16dp"
+		android:paddingTop="8dp"
+		android:paddingBottom="8dp"
+		android:text="@string/add_board_dialog_toolbar_title"
+		android:textSize="@dimen/std_text_size"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<EditText
+		android:id="@+id/edxAddBoardDialogInput"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="@string/add_board_dialog_input_hint"
+		android:imeOptions="flagNoExtractUi"
+		android:inputType="textCapSentences"
+		android:maxLength="100"
+		android:textSize="@dimen/std_text_size"
+		android:paddingLeft="16dp"
+		android:paddingRight="16dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/txvAddBoardDialogHeader" />
+
+	<Spinner
+		android:id="@+id/spnAddBoardDialogSpinner"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:paddingLeft="8dp"
+		android:paddingRight="8dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/edxAddBoardDialogInput" />
+
+	<Button
+		android:id="@+id/btnAddBoardAccept"
+		style="@style/DialogButton"
+		android:text="@string/add_board_dialog_accept_button_title"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/spnAddBoardDialogSpinner" />
+
+	<Button
+		android:id="@+id/btnAddBoardDismiss"
+		style="@style/DialogButton"
+		android:text="@string/dialog_dismiss_button_title"
+		app:layout_constraintEnd_toStartOf="@+id/btnAddBoardAccept"
+		app:layout_constraintTop_toBottomOf="@+id/spnAddBoardDialogSpinner" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

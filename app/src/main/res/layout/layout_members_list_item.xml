@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.alxdthn.tfsboards.custom_view.BoardMembersListItem xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+
+	<com.alxdthn.tfsboards.custom_view.CustomUserAvatar
+		android:id="@+id/avBoardMembersUserAvatar"
+		android:layout_width="40dp"
+		android:layout_height="40dp"
+		android:layout_margin="18dp"
+		app:color="@color/colorAccent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<LinearLayout
+		android:id="@+id/linearLayout"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:layout_marginStart="18dp"
+		android:layout_marginEnd="9dp"
+		android:orientation="vertical"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toEndOf="@+id/avBoardMembersUserAvatar"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<TextView
+			android:id="@+id/txvBoardMembersUserFullName"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#4B4B4B"
+			tools:text="FullName" />
+
+		<TextView
+			android:id="@+id/txvBoardMembersUserLogin"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#636363"
+			tools:text="\@username" />
+	</LinearLayout>
+
+	<ImageButton
+		android:id="@+id/btnBoardMembersChecker"
+		style="@style/HeaderButton"
+		android:layout_marginStart="9dp"
+		android:src="@drawable/ic_done_green"
+		android:visibility="gone"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:visibility="visible" />
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_marginStart="76dp"
+		android:background="#D5D5D5"
+		app:layout_constraintBottom_toBottomOf="parent" />
+</com.alxdthn.tfsboards.custom_view.BoardMembersListItem>
