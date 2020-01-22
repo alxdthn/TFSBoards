@@ -1,6 +1,7 @@
 package com.alxdthn.tfsboards.base
 
 import android.text.TextWatcher
+import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -46,13 +47,10 @@ abstract class FragmentInputHandler(@LayoutRes layoutRes: Int)
 		if (hasFocus) {
 			v?.showKeyboard()
 		} else {
-			val stack = Thread.currentThread().stackTrace
-
-			stack.forEach {
-				if (it.methodName == "onDestroy") return
+			if (!mainActivity.isDestroyed) {
+				hideKeyboard()
+				viewModelInputHandler.cancelInput()
 			}
-			hideKeyboard()
-			viewModelInputHandler.cancelInput()
 		}
 	}
 }
