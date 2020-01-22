@@ -13,6 +13,7 @@ import com.alxdthn.tfsboards.model.GlobalEvent
 import com.alxdthn.tfsboards.ui.filter.adapter.FilterItemsHandler
 import com.alxdthn.tfsboards.utilities.AppAnimator
 import com.alxdthn.tfsboards.utilities.extensions.*
+import io.reactivex.rxkotlin.addTo
 import kotlinx.android.synthetic.main.fragment_filter.*
 import kotlinx.android.synthetic.main.layout_toolbar.*
 
@@ -38,7 +39,9 @@ class FilterFragment : BaseFragment(R.layout.fragment_filter), Animation.Animati
 
 	override fun initializeObservers() {
 		FilterDataObserver().bind(this)
-		subscribe({ itemsHandler.onItemClick }) { viewModel.showCard(it.id) }
+		itemsHandler.onItemClick.subscribe {
+			viewModel.showCard(it.id)
+		}.addTo(compositeDisposable)
 	}
 
 	private fun initToolbar() {

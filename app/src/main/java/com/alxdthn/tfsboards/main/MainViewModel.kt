@@ -5,8 +5,6 @@ import com.alxdthn.tfsboards.model.Events
 import com.alxdthn.tfsboards.model.GlobalEvent
 import com.alxdthn.tfsboards.preferences.AppPreferences
 import com.alxdthn.tfsboards.utilities.AppConstants.TOKEN_PREF_KEY
-import com.alxdthn.tfsboards.utilities.extensions.subscribeToGlobal
-import io.reactivex.rxkotlin.addTo
 import javax.inject.Inject
 
 class MainViewModel @Inject constructor(
@@ -16,8 +14,8 @@ class MainViewModel @Inject constructor(
 	var current = Events.NOTHING
 
 	init {
-		subscribeToGlobal { state ->
-			when (state) {
+		GlobalEvent.subscribe { event ->
+			when (event) {
 				Events.LOGOUT -> preferences.remove(TOKEN_PREF_KEY)
 				else -> Unit
 			}

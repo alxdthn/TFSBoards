@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.alxdthn.tfsboards.R
 import com.alxdthn.tfsboards.base.BaseFragment
 import com.alxdthn.tfsboards.di.component.AppComponent
@@ -28,7 +29,7 @@ class AuthFragment : BaseFragment(R.layout.fragment_auth) {
 	}
 
 	override fun initializeObservers() {
-		observeState({ viewModel.onLogin }) { onLogin ->
+		viewModel.onLogin.observe(viewLifecycleOwner, Observer { onLogin ->
 			if (onLogin) {
 				AppAnimator show wvAuthWebView
 				AppAnimator hide startLayout
@@ -36,10 +37,10 @@ class AuthFragment : BaseFragment(R.layout.fragment_auth) {
 				wvAuthWebView.invisible()
 				startLayout.visible()
 			}
-		}
-		observeState({ viewModel.accessGranted }) { accessGranted ->
+		})
+		viewModel.onLogin.observe(viewLifecycleOwner, Observer { accessGranted ->
 			wvAuthWebView goneIf accessGranted
-		}
+		})
 	}
 
 	@SuppressLint("SetJavaScriptEnabled")

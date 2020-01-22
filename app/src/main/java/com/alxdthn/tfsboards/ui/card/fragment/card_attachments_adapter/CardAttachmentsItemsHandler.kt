@@ -14,7 +14,7 @@ import io.reactivex.subjects.PublishSubject
 class CardAttachmentsItemsHandler(
 	main: CardFragment
 ) : BaseItemsHandler(
-	main.getCompositeDisposable(),
+	main.compositeDisposable,
 	CardAttachmentsDiffCallback(),
 	CardAttachmentsAdapter()
 ) {

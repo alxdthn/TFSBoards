@@ -11,6 +11,7 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.core.text.set
 import androidx.core.text.toSpanned
+import androidx.lifecycle.Observer
 import com.alxdthn.tfsboards.R
 import com.alxdthn.tfsboards.base.BaseItemsHandler
 import com.alxdthn.tfsboards.model.CardItem
@@ -18,14 +19,12 @@ import com.alxdthn.tfsboards.model.Item
 import com.alxdthn.tfsboards.model.local.Card
 import com.alxdthn.tfsboards.ui.filter.FilterFragment
 import com.alxdthn.tfsboards.utilities.AppDiffUtil
-import com.alxdthn.tfsboards.utilities.extensions.observe
-import com.alxdthn.tfsboards.utilities.extensions.subscribe
 import io.reactivex.subjects.PublishSubject
 
 @Suppress("UNCHECKED_CAST")
 class FilterItemsHandler(
 	main: FilterFragment
-) : BaseItemsHandler(main.getCompositeDisposable(), DiffCallback(), FilterCardAdapter()) {
+) : BaseItemsHandler(main.compositeDisposable, DiffCallback(), FilterCardAdapter()) {
 
 	private var currentInput: CharSequence? = null
 	private val color = ContextCompat.getColor(main.context!!, R.color.colorAccent)
@@ -33,8 +32,10 @@ class FilterItemsHandler(
 	val onItemClick = PublishSubject.create<CardItem>()
 
 	init {
-		main.observe({ viewModel.input }) {
-			currentInput = it
+		main.apply {
+			viewModel.input.observe(viewLifecycleOwner, Observer {
+				currentInput = it
+			})
 		}
 		(adapter as FilterCardAdapter).itemsHandler = this
 	}

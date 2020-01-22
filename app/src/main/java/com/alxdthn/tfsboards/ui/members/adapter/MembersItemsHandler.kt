@@ -11,7 +11,7 @@ import com.alxdthn.tfsboards.utilities.AppDiffUtil
 @Suppress("UNCHECKED_CAST")
 class MembersItemsHandler(
 	main: MembersFragment
-) : BaseItemsHandler(main.getCompositeDisposable(), DiffCallback(), MembersAdapter()) {
+) : BaseItemsHandler(main.compositeDisposable, DiffCallback(), MembersAdapter()) {
 
 	private val viewModel = main.viewModel
 

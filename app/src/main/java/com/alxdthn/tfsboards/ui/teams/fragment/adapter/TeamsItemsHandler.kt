@@ -17,7 +17,7 @@ import io.reactivex.subjects.PublishSubject
 @Suppress("UNCHECKED_CAST")
 class TeamsItemsHandler(
 	main: TeamsFragment
-) : BaseItemsHandler(main.getCompositeDisposable(), TeamsDiffCallback(), TeamsAdapter()),
+) : BaseItemsHandler(main.compositeDisposable, TeamsDiffCallback(), TeamsAdapter()),
 	TouchHelperInterface {
 
 	private val viewModel = main.viewModel

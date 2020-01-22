@@ -11,7 +11,6 @@ import com.alxdthn.tfsboards.model.Events
 import com.alxdthn.tfsboards.model.GlobalEvent
 import com.alxdthn.tfsboards.utilities.AppConstants.UNAUTHORIZED
 import com.alxdthn.tfsboards.utilities.DialogListener
-import com.alxdthn.tfsboards.utilities.extensions.subscribeToGlobal
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 
@@ -25,7 +24,7 @@ class MainActivity : AppCompatActivity(), CompositeHolder {
 	private val fragmentApi = FragmentApi(supportFragmentManager, R.id.flFragmentHolder)
 	private val navigationHandler = NavigationHandler(fragmentApi)
 
-	private val compositeDisposable = CompositeDisposable()
+	override val compositeDisposable = CompositeDisposable()
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -39,7 +38,7 @@ class MainActivity : AppCompatActivity(), CompositeHolder {
 	}
 
 	private fun init() {
-		subscribeToGlobal { event ->
+		GlobalEvent.subscribe { event ->
 			navigationHandler.apply {
 				if (event == viewModel.current) return@apply
 				when (event) {
@@ -90,6 +89,4 @@ class MainActivity : AppCompatActivity(), CompositeHolder {
 
 		injector.inject(this)
 	}
-
-	override fun getCompositeDisposable() = compositeDisposable
 }

@@ -11,7 +11,7 @@ import com.alxdthn.tfsboards.ui.card.fragment.CardFragment
 class CardMembersItemsHandler(
 	main: CardFragment
 ) : BaseItemsHandler(
-	main.getCompositeDisposable(),
+	main.compositeDisposable,
 	CardMembersDiffCallback(),
 	CardMembersAdapter()
 ) {

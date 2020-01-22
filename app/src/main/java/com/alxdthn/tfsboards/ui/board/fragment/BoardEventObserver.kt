@@ -2,7 +2,7 @@ package com.alxdthn.tfsboards.ui.board.fragment
 
 import com.alxdthn.tfsboards.model.CardItem
 import com.alxdthn.tfsboards.utilities.extensions.showToastBy
-import com.alxdthn.tfsboards.utilities.extensions.subscribe
+import io.reactivex.rxkotlin.addTo
 import kotlinx.android.synthetic.main.fragment_board.*
 
 class BoardEventObserver {
@@ -16,43 +16,43 @@ class BoardEventObserver {
 		onColumnRendered(main)
 	}
 
-	private fun onNewToast(main: BoardFragment) {
-		main.subscribe({ viewModel.newToast }) { stringRes ->
+	private fun onNewToast(main: BoardFragment) = main.apply { 
+		viewModel.newToast.subscribe { stringRes ->
 			showToastBy(stringRes)
-		}
+		}.addTo(compositeDisposable)
 	}
 
-	private fun onColumnDeleted(main: BoardFragment) {
-		main.subscribe({ viewModel.columnDeleted }) { columnIndex ->
+	private fun onColumnDeleted(main: BoardFragment) = main.apply {
+		viewModel.columnDeleted.subscribe { columnIndex ->
 			bvBoardView.removeColumn(columnIndex)
-		}
+		}.addTo(compositeDisposable)
 	}
 
-	private fun onCardDeleted(main: BoardFragment) {
-		main.subscribe({ viewModel.cardDeleted }) { cardIndex ->
+	private fun onCardDeleted(main: BoardFragment) = main.apply {
+		viewModel.cardDeleted.subscribe { cardIndex ->
 			selectedAdapter?.removeItem(cardIndex)
-		}
+		}.addTo(compositeDisposable)
 	}
 
-	private fun onCardAdded(main: BoardFragment) {
-		main.subscribe({ viewModel.cardAdded }) { cardWithIndex ->
+	private fun onCardAdded(main: BoardFragment) = main.apply {
+		viewModel.cardAdded.subscribe { cardWithIndex ->
 			selectedAdapter?.addItem(
 				cardWithIndex.second,
 				CardItem().render(cardWithIndex.first)
 			)
 			selectedEditText?.setText("")
-		}
+		}.addTo(compositeDisposable)
 	}
 
-	private fun onError(main: BoardFragment) {
-		main.subscribe({ viewModel.errorCode} ) { error ->
+	private fun onError(main: BoardFragment) = main.apply {
+		viewModel.errorCode.subscribe { error ->
 			mainActivity.handleError(error)
-		}
+		}.addTo(compositeDisposable)
 	}
 
-	private fun onColumnRendered(main: BoardFragment) {
-		main.subscribe({ itemsHandler.renderedColumn }) { columnItem ->
+	private fun onColumnRendered(main: BoardFragment) = main.apply {
+		itemsHandler.renderedColumn.subscribe { columnItem ->
 			bvBoardView.initColumnView(columnItem, this)
-		}
+		}.addTo(compositeDisposable)
 	}
 }

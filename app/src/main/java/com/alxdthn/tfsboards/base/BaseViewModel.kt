@@ -15,7 +15,7 @@ abstract class BaseViewModel : ViewModel(), CompositeHolder {
 
 	var errorCode = PublishSubject.create<Int>()
 
-	private val compositeDisposable = CompositeDisposable()
+	override val compositeDisposable = CompositeDisposable()
 
 	private var ready = false
 
@@ -47,6 +47,4 @@ abstract class BaseViewModel : ViewModel(), CompositeHolder {
 
 		compositeDisposable.dispose()
 	}
-
-	override fun getCompositeDisposable() = compositeDisposable
 }

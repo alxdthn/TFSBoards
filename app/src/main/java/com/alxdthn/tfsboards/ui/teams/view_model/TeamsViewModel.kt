@@ -76,7 +76,7 @@ class TeamsViewModel @Inject constructor(
 				if (updatingData.isActive()) updatingData.cancel()
 			}, { error ->
 				handleError(error)
-			}).addTo(getCompositeDisposable())
+			}).addTo(compositeDisposable)
 	}
 
 	fun uploadBoard(name: String, idTeam: String?) {
@@ -94,7 +94,7 @@ class TeamsViewModel @Inject constructor(
 			}, { error ->
 				handleError(error)
 			})
-			.addTo(getCompositeDisposable())
+			.addTo(compositeDisposable)
 	}
 
 	fun removeBoard(idBoard: String) {
@@ -105,7 +105,7 @@ class TeamsViewModel @Inject constructor(
 			}, { error ->
 				handleError(error)
 			})
-			.addTo(getCompositeDisposable())
+			.addTo(compositeDisposable)
 	}
 
 	private fun downloadAvatar(avatarHash: String) {
@@ -116,7 +116,7 @@ class TeamsViewModel @Inject constructor(
 			.subscribe { bitmap ->
 				_avatarBitmap.value = bitmap
 			}
-			.addTo(getCompositeDisposable())
+			.addTo(compositeDisposable)
 	}
 
 	private fun downloadUser() {
@@ -129,7 +129,7 @@ class TeamsViewModel @Inject constructor(
 			}, { error ->
 				handleError(error)
 			})
-			.addTo(getCompositeDisposable())
+			.addTo(compositeDisposable)
 	}
 
 	/**

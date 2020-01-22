@@ -1,11 +1,11 @@
 package com.alxdthn.tfsboards.ui.card.fragment
 
+import androidx.lifecycle.Observer
 import com.alxdthn.tfsboards.R
 import com.alxdthn.tfsboards.model.local.Action
 import com.alxdthn.tfsboards.model.local.Attachment
 import com.alxdthn.tfsboards.model.local.User
 import com.alxdthn.tfsboards.utilities.extensions.goneIf
-import com.alxdthn.tfsboards.utilities.extensions.observe
 import kotlinx.android.synthetic.main.layout_card_attachments.*
 import kotlinx.android.synthetic.main.layout_card_content_header.*
 import kotlinx.android.synthetic.main.layout_card_description.*
@@ -20,29 +20,29 @@ class CardDataObserver {
 		observeToolbarColor(main)
 	}
 
-	private fun observeCardPosition(main: CardFragment) {
-		main.observe({ viewModel.position }) { positionDescription ->
+	private fun observeCardPosition(main: CardFragment) = main.apply {
+		viewModel.position.observe(viewLifecycleOwner, Observer { positionDescription ->
 			txvCardFragmentPosition.text = positionDescription
-		}
+		})
 	}
 
-	private fun observeToolbarColor(main: CardFragment) {
-		main.observe({ viewModel.toolbarColor }) { color ->
+	private fun observeToolbarColor(main: CardFragment) = main.apply {
+		viewModel.toolbarColor.observe(viewLifecycleOwner, Observer { color ->
 			clToolbar.setBackgroundColor(color)
 			clToolbar.outlineProvider = null
 			llCardFragmentHeader.setCardBackgroundColor(color)
-		}
+		})
 	}
 
-	private fun observeCardData(main: CardFragment) {
-		main.observe({ viewModel.cardData }) { card ->
+	private fun observeCardData(main: CardFragment) = main.apply {
+		viewModel.cardData.observe(viewLifecycleOwner, Observer { card ->
 			setHeaderTitle(main, card.name)
 			setCardName(main, card.name)
 			setCardDescription(main, card.desc)
 			setMembers(main, card.members)
 			setAttachments(main, card.attachments)
 			setActions(main, card.actions)
-		}
+		})
 	}
 
 	private fun setActions(main: CardFragment, actions: List<Action>?) {

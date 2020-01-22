@@ -20,13 +20,13 @@ abstract class BaseFragment(@LayoutRes private val layoutRes: Int) : Fragment(),
 	lateinit var viewModelFactory: ViewModelProvider.Factory
 	lateinit var mainActivity: MainActivity
 
-	private val compositeDisposable = CompositeDisposable()
-
 	abstract fun initViewModel()
 
 	abstract fun initializeUi()
 
 	abstract fun initializeObservers()
+
+	override val compositeDisposable = CompositeDisposable()
 
 	override fun onAttach(context: Context) {
 		super.onAttach(context)
@@ -57,8 +57,6 @@ abstract class BaseFragment(@LayoutRes private val layoutRes: Int) : Fragment(),
 	infix fun handleError(error: Int) {
 		mainActivity.handleError(error)
 	}
-
-	override fun getCompositeDisposable() = compositeDisposable
 
 	abstract fun inject(injector: AppComponent)
 }

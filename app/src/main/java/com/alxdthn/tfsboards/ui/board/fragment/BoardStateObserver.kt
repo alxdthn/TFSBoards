@@ -4,6 +4,7 @@ import android.content.res.Resources
 import android.os.Handler
 import android.util.Log
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import com.alxdthn.tfsboards.R
 import com.alxdthn.tfsboards.ui.board.fragment.adapter.ColumnAdapter
 import com.alxdthn.tfsboards.utilities.AppAnimator
@@ -27,8 +28,8 @@ class BoardStateObserver {
 		onDownloadingBoard(main)
 	}
 
-	private fun onFilter(main: BoardFragment) {
-		main.observeState({ viewModel.filter }) { onFilter ->
+	private fun onFilter(main: BoardFragment) = main.apply {
+		viewModel.filter.observe(viewLifecycleOwner, Observer { onFilter ->
 			val color = viewModel.getBoardData().getColors().darkValue
 			val statusBarColor = if (onFilter) AppColors.getDarkColor(color, 0.7f) else color
 
@@ -36,26 +37,26 @@ class BoardStateObserver {
 			btnBoardToolbarFilter.isEnabled = !onFilter
 			if (onFilter) AppAnimator hide bvBoardView else AppAnimator show bvBoardView
 			bvBoardView invisibleIf onFilter
-		}
+		})
 	}
 
-	private fun canAccept(main: BoardFragment) {
-		main.observeState({ viewModel.isCanAccept }) { isCanAccept ->
+	private fun canAccept(main: BoardFragment) = main.apply {
+		viewModel.isCanAccept.observe(viewLifecycleOwner, Observer { isCanAccept ->
 			btnBoardToolbarAcceptInput.isEnabled = isCanAccept
-		}
+		})
 	}
 
-	private fun onDownloadingBoard(main: BoardFragment) {
-		main.observeState({ viewModel.downloadingBoard }) { downloading ->
+	private fun onDownloadingBoard(main: BoardFragment) = main.apply {
+		viewModel.downloadingBoard.observe(viewLifecycleOwner, Observer { downloading ->
 			if (!viewModel.filter.isActive() && !downloading) {
 				AppAnimator show bvBoardView
 			}
 			pbBoardProgressBar hereIf downloading
-		}
+		})
 	}
 
-	private fun onEditColumnName(main: BoardFragment) {
-		main.observeState({ viewModel.editColumnName }) { onEditName ->
+	private fun onEditColumnName(main: BoardFragment) = main.apply {
+		viewModel.editColumnName.observe(viewLifecycleOwner, Observer { onEditName ->
 			if (onEditName) {
 				val header = bvBoardView.getHeaderView(viewModel.getSelectedColumnIndex())
 				val input = header.edxColumnHeaderInput
@@ -72,11 +73,11 @@ class BoardStateObserver {
 				selectedColumnHeader?.edxColumnHeaderInput?.gone()
 				selectedColumnHeader?.txvColumnHeaderName?.visible()
 			}
-		}
+		})
 	}
 
-	private fun onAddNewColumn(main: BoardFragment) {
-		main.observeState({ viewModel.addNewColumn }) { onAddNewColumn ->
+	private fun onAddNewColumn(main: BoardFragment) = main.apply {
+		viewModel.addNewColumn.observe(viewLifecycleOwner, Observer { onAddNewColumn ->
 			btnAddColumn goneIf onAddNewColumn
 			edxAddColumnInput hereIf onAddNewColumn
 			selectedEditText = if (onAddNewColumn) {
@@ -84,18 +85,18 @@ class BoardStateObserver {
 				bvBoardView.scrollToColumn(bvBoardView.columnCount - 1, true)
 				edxAddColumnInput
 			} else null
-		}
+		})
 	}
 
-	private fun onEdit(main: BoardFragment) {
-		main.observeState({ viewModel.onEdit }) { onEdit ->
+	private fun onEdit(main: BoardFragment) = main.apply {
+		viewModel.onEdit.observe(viewLifecycleOwner, Observer { onEdit ->
 			btnBoardToolbarBack invisibleIf onEdit
 			btnBoardToolbarFilter invisibleIf onEdit
 
 			btnBoardToolbarCancelInput visibleIf onEdit
 			btnBoardToolbarAcceptInput visibleIf onEdit
 			bvBoardView setPaddingBottom getPadding(onEdit, resources)
-		}
+		})
 	}
 
 	private fun getPadding(onEdit: Boolean, resources: Resources): Int {
@@ -106,8 +107,8 @@ class BoardStateObserver {
 		}
 	}
 
-	private fun onAddNewCard(main: BoardFragment) {
-		main.observeState({ viewModel.addNewCard }) { onAddNewCard ->
+	private fun onAddNewCard(main: BoardFragment) = main.apply {
+		viewModel.addNewCard.observe(viewLifecycleOwner, Observer { onAddNewCard ->
 			if (onAddNewCard) {
 				mainActivity.softInputAdjustResize()
 
@@ -130,6 +131,6 @@ class BoardStateObserver {
 				}
 				selectedColumnFooter?.visible()
 			}
-		}
+		})
 	}
 }

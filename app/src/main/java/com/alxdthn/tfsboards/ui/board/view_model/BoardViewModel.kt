@@ -20,7 +20,6 @@ import com.alxdthn.tfsboards.ui.card.view_model.CardViewModel
 import com.alxdthn.tfsboards.ui.filter.FilterViewModel
 import com.alxdthn.tfsboards.utilities.AppConstants.BOARD_KEY
 import com.alxdthn.tfsboards.utilities.AppConstants.CARD_KEY
-import com.alxdthn.tfsboards.utilities.extensions.subscribeToGlobal
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.subjects.PublishSubject
 import javax.inject.Inject
@@ -58,7 +57,7 @@ class BoardViewModel @Inject constructor(
 	var focusedColumn = 0
 
 	init {
-		subscribeToGlobal { event ->
+		GlobalEvent.subscribe { event ->
 			when (event) {
 				Events.CARD_CLOSE -> invalidate()
 				Events.CARD_DELETE -> deleteCard()
@@ -106,7 +105,7 @@ class BoardViewModel @Inject constructor(
 			}, { error ->
 				handleError(error)
 			})
-			.addTo(getCompositeDisposable())
+			.addTo(compositeDisposable)
 	}
 
 	private fun updateColumn() {
@@ -122,7 +121,7 @@ class BoardViewModel @Inject constructor(
 			}, { error ->
 				handleError(error)
 			})
-			.addTo(getCompositeDisposable())
+			.addTo(compositeDisposable)
 	}
 
 	private fun uploadCard() {
@@ -140,7 +139,7 @@ class BoardViewModel @Inject constructor(
 			}, { error ->
 				handleError(error)
 			})
-			.addTo(getCompositeDisposable())
+			.addTo(compositeDisposable)
 	}
 
 	fun deleteCard() {
@@ -154,7 +153,7 @@ class BoardViewModel @Inject constructor(
 			}, { error ->
 				handleError(error)
 			})
-			.addTo(getCompositeDisposable())
+			.addTo(compositeDisposable)
 	}
 
 	fun archiveColumn() {
@@ -168,7 +167,7 @@ class BoardViewModel @Inject constructor(
 			}, { error ->
 				handleError(error)
 			})
-			.addTo(getCompositeDisposable())
+			.addTo(compositeDisposable)
 	}
 
 	private fun downloadBoard() {
@@ -180,7 +179,7 @@ class BoardViewModel @Inject constructor(
 			}, { error ->
 				handleError(error)
 			})
-			.addTo(getCompositeDisposable())
+			.addTo(compositeDisposable)
 	}
 
 	fun handleCardMove(fromColumn: Int, fromRow: Int, toColumn: Int, toRow: Int) {
@@ -197,7 +196,7 @@ class BoardViewModel @Inject constructor(
 			}, { error ->
 				handleError(error)
 			})
-			.addTo(getCompositeDisposable())
+			.addTo(compositeDisposable)
 	}
 
 	/**

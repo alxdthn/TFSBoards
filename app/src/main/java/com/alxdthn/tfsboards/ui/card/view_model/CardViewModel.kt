@@ -23,7 +23,6 @@ import com.alxdthn.tfsboards.utilities.AppConstants.CARD_KEY
 import com.alxdthn.tfsboards.utilities.AppConstants.COLOR_KEY
 import com.alxdthn.tfsboards.utilities.AppConstants.COLUMN_NAME_KEY
 import com.alxdthn.tfsboards.utilities.extensions.removeFirstIf
-import com.alxdthn.tfsboards.utilities.extensions.subscribeToGlobal
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.subjects.PublishSubject
 import javax.inject.Inject
@@ -60,7 +59,7 @@ class CardViewModel @Inject constructor(
 	val attachmentsChanged = PublishSubject.create<List<Attachment>>()
 
 	init {
-		subscribeToGlobal { event ->
+		GlobalEvent.subscribe { event ->
 			when (event) {
 				Events.MEMBERS_CLOSE -> updateMembers()
 				else -> Unit
@@ -141,7 +140,7 @@ class CardViewModel @Inject constructor(
 				updatingCard.cancel()
 			}, { error ->
 				handleError(error)
-			}).addTo(getCompositeDisposable())
+			}).addTo(compositeDisposable)
 	}
 
 	private fun downloadCardActions() {
@@ -151,7 +150,7 @@ class CardViewModel @Inject constructor(
 				actionsDownloaded.onNext(actions)
 			}, { error ->
 				handleError(error)
-			}).addTo(getCompositeDisposable())
+			}).addTo(compositeDisposable)
 	}
 
 	private fun updateCardMembers() {
@@ -164,7 +163,7 @@ class CardViewModel @Inject constructor(
 				membersChanged.onNext(cardMembers)
 			}, { error ->
 				handleError(error)
-			}).addTo(getCompositeDisposable())
+			}).addTo(compositeDisposable)
 	}
 
 	fun downloadAttachment(idAttachment: String?) {
@@ -186,7 +185,7 @@ class CardViewModel @Inject constructor(
 				attachmentsChanged.onNext(attachments)
 			}) { error ->
 				handleError(error)
-			}.addTo(getCompositeDisposable())
+			}.addTo(compositeDisposable)
 	}
 
 	private fun updateCard() {
@@ -198,7 +197,7 @@ class CardViewModel @Inject constructor(
 			}, { error ->
 				cancelInput()
 				handleError(error)
-			}).addTo(getCompositeDisposable())
+			}).addTo(compositeDisposable)
 	}
 
 	fun updateMembers() {

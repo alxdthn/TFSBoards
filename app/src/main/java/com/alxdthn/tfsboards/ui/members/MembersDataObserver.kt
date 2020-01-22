@@ -1,6 +1,6 @@
 package com.alxdthn.tfsboards.ui.members
 
-import com.alxdthn.tfsboards.utilities.extensions.observe
+import androidx.lifecycle.Observer
 
 class MembersDataObserver {
 
@@ -8,9 +8,9 @@ class MembersDataObserver {
 		observeMembers(main)
 	}
 
-	private fun observeMembers(main: MembersFragment) {
-		main.observe({ viewModel.resultMembers }) { resultMembers ->
+	private fun observeMembers(main: MembersFragment) = main.apply {
+		viewModel.resultMembers.observe(viewLifecycleOwner, Observer { resultMembers ->
 			itemsHandler.render(resultMembers)
-		}
+		})
 	}
 }
